@@ -22,11 +22,14 @@ import arcpy
 import os
 import csv
 arcpy.env.overwriteOutput = True
+
 # Set workspace
-arcpy.env.workspace = "E:\ShanaghanPythonGIS\Class_Files\Class06\Challenge_05"
-input_directory = "E:\ShanaghanPythonGIS\Class_Files\Class06\Challenge_05"
+input_directory = "C:\Data\Students_2022\Shanaghan\Coding_Challenge_5"
+arcpy.env.workspace = input_directory
+
 # # Set spatial reference of output
 spRef = arcpy.SpatialReference(4326)
+
 # Convert .csv to a shapefile which contains both species
 in_Table = r"combined_csv.csv"
 x_coords = "decimallongitude"
@@ -76,8 +79,10 @@ for species in species_list:
      arcpy.CreateFishnet_management(outFeatureClass, originCoordinate, yAxisCoordinate,
                                      cellSizeWidth, cellSizeHeight, numRows, numColumns,
                                      oppositeCorner, labels, templateExtent, geometryType)
+
      if arcpy.Exists(outFeatureClass):
          print("Created Fishnet file successfully for" + str(species))
+
 # Use spatial join to create heat maps
      target_features = "Species_fishnet_" + str(species) + ".shp"
      join_features = "Species" + str(species) + ".shp"
@@ -93,9 +98,4 @@ for species in species_list:
                                 search_radius, distance_field_name)
      if arcpy.Exists(out_feature_class):
          print("Created Heatmap file successfully for" + str(species))
-
-
-
-
-
 
