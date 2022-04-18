@@ -38,5 +38,11 @@ for month in listMonths:
     arcpy.CompositeBands_management(in_rasters=listRasters, out_raster=os.path.join(outputDirectory, "2015" + month + ".tif"))
     print("Compositing Bands for " + month + " finished.")
 
+    vis = arcpy.Raster(listRasters_B4)
+    nir = arcpy.Raster(listRasters_B5)
+    nvdi = (nir - vis) / (nir + vis)
+
+    nvdi.save("NVDI_" + month + ".tif")
+
 
 
