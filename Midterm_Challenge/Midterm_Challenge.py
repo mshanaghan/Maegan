@@ -17,7 +17,7 @@ import arcpy
 import os
 arcpy.env.overwriteOutput = True
 # Set directory
-directory = "C:\ShanaghanNRS528\Class_files\Midterm_Challenge\Midterm_Challenge_Data"
+directory = "C:\Data\Students_2022\Shanaghan\Midterm_Challenge\Midterm_Challenge_Data"
 # Set local variables
 in_features = os.path.join(directory, r"Municipalities__1997_.shp")
 out_feature_class = os.path.join(directory, r"SK_selected.shp")
