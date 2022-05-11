@@ -1,9 +1,9 @@
 # **Final Toolbox Challenge!**
 
 My toolbox is located within the "Final_Toolbox.zip" file in this repository. It is called "Final_Toolbox.pyt" and it consists of three tools:
--Buffer 
--Select
--Clip
+- Buffer 
+- Select
+- Clip
 Example data is located in the folder called "Final_Challenge_Data". All example data was downloaded from RIGIS.org. 
 
 ## **Buffer**
